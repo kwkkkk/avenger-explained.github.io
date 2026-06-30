@@ -124,3 +124,25 @@ img {
 .btn-carrossel:hover {
     background-color: #ff0000;
 }
+
+/* Configurações para telas de celular (até 768px de largura) */
+@media (max-width: 768px) {
+    .carrossel-conteiner {
+        gap: 15px; /* Diminui o espaço entre os botões e a imagem */
+    }
+
+    .logos {
+        width: 180px;  /* Reduz o tamanho do container no celular */
+        height: 180px;
+    }
+
+    .logos img {
+        width: 100%;   /* Faz a imagem ocupar o tamanho total do container */
+        height: 100%;
+    }
+
+    .btn-carrossel {
+        font-size: 18px; /* Diminui um pouco o tamanho dos botões */
+        padding: 8px 15px;
+    }
+}

@@ -217,3 +217,42 @@ body::before{
   font-optical-sizing: auto;
   font-style: normal;
 }
+
+
+/* Configurações para telas de celular (até 900px de largura) */
+@media (max-width: 900px) {
+    .homepage {
+        flex-direction: column; /* Muda o alinhamento de linha para coluna */
+        padding: 20px;
+        gap: 20px;
+    }
+
+    /* Remove as margens laterais que empurravam o conteúdo */
+    .bll-esquerda, 
+    .bll-direita {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;      /* Faz as caixas ocuparem a largura total da tela */
+        height: auto;     /* Permite que a altura se ajuste ao texto */
+    }
+
+    .bll-esquerda .info-left,
+    .bll-direita .info-right {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;       /* Cria um espaçamento entre os cards */
+    }
+
+    .logopers img {
+        width: 100%;     /* Faz a imagem do personagem se ajustar à tela */
+        max-width: 300px; /* Impede que ela fique gigante */
+        height: auto;
+    }
+
+    .logopers::before {
+        width: 200px;    /* Diminui a bola brilhante de fundo para não vazar */
+        height: 200px;
+    }
+}
