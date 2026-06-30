@@ -1,0 +1,107 @@
+@keyframes surgirTitulo {
+    from {
+        opacity: 0;
+        transform: translateY(-80px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes surgirLogos {
+    from {
+        opacity: 0;
+        transform: translateY(80px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body {
+    background: radial-gradient(circle at center,
+        #313131 0%,
+        #4a4a4a 35%,
+        #2b2b2b 70%,
+        #000000 100%);
+}
+
+img {
+    height: 200px;
+    width: 200px;
+}
+
+.welcome {
+    color: white;
+    text-align: center;
+    margin-top: 100px;
+    font-size: 20px; 
+    font-family: Arial, sans-serif;
+    opacity: 0;
+    transform: translateY(-80px);
+    animation: surgirTitulo 1s ease-out forwards; 
+}
+
+.homepage {
+    margin-top: 100px;
+}
+
+.esquerdo {
+    height: 50px;
+    width: 60px;
+}
+
+.direito {
+    height: 50px;
+    width: 60px;
+}
+
+.carrossel-conteiner {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 250px;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(80px);
+    animation: surgirLogos 1s ease-out forwards;
+    animation-delay: 0.4s; 
+}
+
+.logos img {
+    display: none;
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+}
+
+.logos img.active {
+    display: block;
+}
+
+.btn-carrossel {
+    background-color: #333;
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 20%;
+    transition: background 0.3s ease;
+}
+
+.btn-carrossel:hover {
+    background-color: #ff0000;
+}
