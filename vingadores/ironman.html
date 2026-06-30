@@ -10,6 +10,7 @@
   <title>Captain America Explain</title>
 </head>
 <body>
+  <div class="doom-flash"></div>
   <div class="homepage">
     <div class="bll-esquerda">
       <div class="info-left">
@@ -31,7 +32,11 @@
       </div>
     </div>
     <div class="logopers">
-      <div class="scanner"><img src="ironmanpng.png" alt="Homem-Aranha"></div>
+      <p class="doom-banner">Sinal interceptado &mdash; bem-vindos a Latveria</p>
+      <div class="scanner">
+        <img src="ironmanpng.png" alt="Homem-Aranha" class="iron-img">
+        <img src="doompng.png" alt="Doctor Doom" class="doom-img">
+      </div>
     </div>
     <div class="bll-direita">
       <div class="info-right">
@@ -49,5 +54,24 @@
       </div>
     </div>
   </div>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const flash = document.querySelector('.doom-flash');
+      const scanner = document.querySelector('.scanner');
+      const banner = document.querySelector('.doom-banner');
+
+      setTimeout(() => {
+        // power surge: flash, theme swap and image crossfade fire together
+        document.body.classList.add('doom-mode');
+        flash.classList.add('active');
+        scanner.classList.add('doom-active');
+        banner.classList.add('show');
+
+        setTimeout(() => flash.classList.remove('active'), 900);
+        setTimeout(() => banner.classList.remove('show'), 4200);
+      }, 5000);
+    });
+  </script>
 </body>
 </html>
